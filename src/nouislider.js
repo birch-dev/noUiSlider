@@ -1036,8 +1036,10 @@
 
             if (handleNumber === 0) {
                 addClass(handle, options.cssClasses.handleLower);
+                handle.setAttribute("aria-label", "Minimum");
             } else if (handleNumber === options.handles - 1) {
                 addClass(handle, options.cssClasses.handleUpper);
+                handle.setAttribute("aria-label", "Maximum");
             }
 
             return origin;

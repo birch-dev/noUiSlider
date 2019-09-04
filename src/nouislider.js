@@ -132,13 +132,13 @@
         var x = supportPageOffset
             ? window.pageXOffset
             : isCSS1Compat
-                ? doc.documentElement.scrollLeft
-                : doc.body.scrollLeft;
+            ? doc.documentElement.scrollLeft
+            : doc.body.scrollLeft;
         var y = supportPageOffset
             ? window.pageYOffset
             : isCSS1Compat
-                ? doc.documentElement.scrollTop
-                : doc.body.scrollTop;
+            ? doc.documentElement.scrollTop
+            : doc.body.scrollTop;
 
         return {
             x: x,
@@ -159,16 +159,16 @@
                   end: "pointerup"
               }
             : window.navigator.msPointerEnabled
-                ? {
-                      start: "MSPointerDown",
-                      move: "MSPointerMove",
-                      end: "MSPointerUp"
-                  }
-                : {
-                      start: "mousedown touchstart",
-                      move: "mousemove touchmove",
-                      end: "mouseup touchend"
-                  };
+            ? {
+                  start: "MSPointerDown",
+                  move: "MSPointerMove",
+                  end: "MSPointerUp"
+              }
+            : {
+                  start: "mousedown touchstart",
+                  move: "mousemove touchmove",
+                  end: "mouseup touchend"
+              };
     }
 
     // https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md

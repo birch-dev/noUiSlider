@@ -1,4 +1,4 @@
-/*! nouislider - 14.0.2 - 6/28/2019 */
+/*! nouislider - 14.0.3 - 9/4/2019 */
 (function(factory) {
     if (typeof define === "function" && define.amd) {
         // AMD. Register as an anonymous module.
@@ -13,7 +13,7 @@
 })(function() {
     "use strict";
 
-    var VERSION = "14.0.2";
+    var VERSION = "14.0.3";
 
     //region Helper Methods
 
@@ -133,13 +133,13 @@
         var x = supportPageOffset
             ? window.pageXOffset
             : isCSS1Compat
-                ? doc.documentElement.scrollLeft
-                : doc.body.scrollLeft;
+            ? doc.documentElement.scrollLeft
+            : doc.body.scrollLeft;
         var y = supportPageOffset
             ? window.pageYOffset
             : isCSS1Compat
-                ? doc.documentElement.scrollTop
-                : doc.body.scrollTop;
+            ? doc.documentElement.scrollTop
+            : doc.body.scrollTop;
 
         return {
             x: x,
@@ -160,16 +160,16 @@
                   end: "pointerup"
               }
             : window.navigator.msPointerEnabled
-                ? {
-                      start: "MSPointerDown",
-                      move: "MSPointerMove",
-                      end: "MSPointerUp"
-                  }
-                : {
-                      start: "mousedown touchstart",
-                      move: "mousemove touchmove",
-                      end: "mouseup touchend"
-                  };
+            ? {
+                  start: "MSPointerDown",
+                  move: "MSPointerMove",
+                  end: "MSPointerUp"
+              }
+            : {
+                  start: "mousedown touchstart",
+                  move: "mousemove touchmove",
+                  end: "mouseup touchend"
+              };
     }
 
     // https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
@@ -1037,8 +1037,10 @@
 
             if (handleNumber === 0) {
                 addClass(handle, options.cssClasses.handleLower);
+                handle.setAttribute("aria-label", "Minimum");
             } else if (handleNumber === options.handles - 1) {
                 addClass(handle, options.cssClasses.handleUpper);
+                handle.setAttribute("aria-label", "Maximum");
             }
 
             return origin;
